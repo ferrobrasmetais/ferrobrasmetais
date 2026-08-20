@@ -1,0 +1,51 @@
+# ============================================================
+# ROBOTS.TXT - FERROBRAS METAIS
+# ============================================================
+# Instruções para robôs de busca (Google, Bing, etc.)
+# ============================================================
+
+User-agent: *
+Allow: /
+
+# Bloquear pastas sensíveis
+Disallow: /config/
+Disallow: /includes/
+Disallow: /painel_industrial/
+Disallow: /backup_*/
+Disallow: /lixeira_*/
+Disallow: /assets/images_backup/
+Disallow: /backup_seguro.php
+Disallow: /seguranca_total.php
+Disallow: /otimizar_*.php
+Disallow: /corrigir_*.php
+Disallow: /analisador_*.php
+
+# Tempo de atualização do sitemap
+Sitemap: https://ferrobrasmetais.com.br/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+Disallow: /painel_industrial/
+Disallow: /backup_*/
+Disallow: /lixeira_*/
+
+# Bing
+User-agent: bingbot
+Allow: /
+Disallow: /painel_industrial/
+Disallow: /backup_*/
+Disallow: /lixeira_*/
+
+# Bloquear bots maliciosos
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
