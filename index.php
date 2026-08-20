@@ -1,7 +1,7 @@
 <?php
 // ============================================
 // INDEX.PHP - FERROBRAS METAIS
-// VERSÃO ESTÁVEL - 100% FUNCIONANDO
+// VERSÃO COM CARROSSEL DE PRODUTOS
 // ============================================
 
 error_reporting(E_ALL);
@@ -32,7 +32,6 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Tubos, Metais e Retalhos em Caxias do Sul e Serra Gaúcha | Ferrobras Metais</title>
     <meta name="description" content="Tubos fora de padrão, metais em pedaços, inox, alumínio, nylon e bronze em Caxias do Sul. Atendimento ágil para toda a Serra Gaúcha.">
-    <meta name="keywords" content="tubos, metais, retalhos, inox, aluminio, nylon, bronze, Caxias do Sul, Serra Gaucha, acos, chapas, vigas, perfis, barras, ferragens, serralheria, usinagem, manutencao industrial">
     <meta name="keywords" content="tubos, metais, retalhos, inox, aluminio, nylon, bronze, Caxias do Sul, Serra Gaucha, acos, chapas, vigas, perfis, barras, ferragens, serralheria, usinagem, manutencao industrial">
     <link rel="canonical" href="https://ferrobrasmetais.com.br/">
     
@@ -95,24 +94,6 @@ try {
         .feature-item i { font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 8px; }
         .feature-item h3 { font-size: clamp(0.85rem, 1.5vw, 1.1rem); font-weight: 700; margin-bottom: 4px; text-transform: uppercase; }
         .feature-item p { font-size: clamp(0.75rem, 1.2vw, 0.9rem); color: #fce8e6; }
-
-        .products-section { padding: clamp(40px, 6vw, 80px) 15px; background: var(--gray-light); }
-        .section-title { text-align: center; margin-bottom: clamp(30px, 5vw, 50px); }
-        .section-title h2 { font-family: 'Oswald', sans-serif; font-size: clamp(1.6rem, 4vw, 2.5rem); text-transform: uppercase; color: var(--dark); margin-bottom: 8px; }
-        .section-title p { color: var(--text-muted); font-size: clamp(0.85rem, 1.5vw, 1.05rem); }
-
-        .products-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: clamp(15px, 2.5vw, 25px); }
-        .product-card { background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: var(--transition); border-top: 4px solid var(--primary); display: flex; flex-direction: column; }
-        .product-card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.1); }
-        .product-image { width: 100%; height: clamp(150px, 25vw, 200px); object-fit: cover; background: #f0f2f5; }
-        .product-image-placeholder { width: 100%; height: clamp(150px, 25vw, 200px); background: #f0f2f5; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #bbb; font-size: clamp(2rem, 4vw, 3rem); }
-        .product-image-placeholder span { font-size: 12px; color: #999; margin-top: 5px; }
-        .product-content { padding: clamp(15px, 2vw, 25px); flex: 1; display: flex; flex-direction: column; }
-        .product-content h3 { font-size: clamp(1rem, 1.8vw, 1.3rem); font-weight: 700; margin-bottom: 8px; color: var(--dark); }
-        .product-content p { color: var(--text-muted); font-size: clamp(0.8rem, 1.2vw, 0.95rem); margin-bottom: 12px; flex: 1; }
-        .product-price { font-weight: 700; color: var(--primary); margin: 8px 0 12px; font-size: clamp(0.9rem, 1.4vw, 1.05rem); }
-        .product-link { color: var(--primary); text-decoration: none; font-weight: 600; font-size: clamp(0.8rem, 1.2vw, 0.95rem); display: inline-flex; align-items: center; gap: 6px; transition: var(--transition); align-self: flex-start; margin-top: auto; }
-        .product-link:hover { color: var(--primary-dark); gap: 10px; }
 
         .about-section { padding: clamp(40px, 6vw, 80px) 15px; background: #fff; }
         .about-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(25px, 5vw, 50px); align-items: center; }
@@ -177,10 +158,6 @@ try {
             .hero h2 { font-size: 1.6rem; }
             .hero-buttons { flex-direction: column; align-items: center; gap: 8px; }
             .btn-primary, .btn-outline { width: 100%; max-width: 250px; padding: 10px 16px; font-size: 0.75rem; min-width: auto; }
-            .products-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-            .product-image { height: 120px; }
-            .product-content { padding: 12px; }
-            .product-content h3 { font-size: 0.9rem; }
             .about-image { height: 180px; }
             .footer-container { grid-template-columns: 1fr 1fr; gap: 15px; }
             .whatsapp-float { width: 55px; height: 55px; font-size: 28px; bottom: 20px; right: 20px; }
@@ -189,65 +166,291 @@ try {
         }
         @media (max-width: 480px) { 
             .hero h2 { font-size: 1.3rem; }
-            .products-grid { grid-template-columns: 1fr; gap: 15px; }
             .features-grid { grid-template-columns: 1fr; gap: 10px; }
             .footer-container { grid-template-columns: 1fr; text-align: center; }
             .brand-logo { height: 42px; }
             .whatsapp-float { width: 50px; height: 50px; font-size: 24px; bottom: 15px; right: 15px; }
             .btn-topo { width: 40px; height: 40px; font-size: 16px; bottom: 80px; right: 15px; }
-            .product-image { height: 160px; }
             .about-image { height: 150px; }
         }
         @media (max-width: 360px) { .hero h2 { font-size: 1.1rem; } .brand-logo { height: 36px; } }
+        
+        /* ============================================ */
+        /* 🎠 CARROSSEL DE PRODUTOS */
+        /* ============================================ */
+        .carrossel-produtos {
+            padding: 60px 0;
+            background: #f8f9fa;
+            position: relative;
+        }
+
+        .carrossel-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carrossel-wrapper {
+            display: flex;
+            gap: 25px;
+            transition: transform 0.5s ease;
+            padding: 10px 0;
+        }
+
+        .carrossel-item {
+            min-width: calc(33.333% - 17px);
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px 20px 20px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .carrossel-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+        }
+
+        .carrossel-item .product-image {
+            width: 100%;
+            max-height: 150px;
+            object-fit: contain;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .carrossel-item .product-image-placeholder {
+            width: 100%;
+            height: 120px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            margin-bottom: 12px;
+        }
+
+        .carrossel-item h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+            min-height: 50px;
+        }
+
+        .carrossel-item p {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+            margin-bottom: 15px;
+            min-height: 40px;
+            flex-grow: 1;
+        }
+
+        .carrossel-item .btn-whatsapp {
+            display: inline-block;
+            background: #25d366;
+            color: #fff;
+            padding: 8px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .carrossel-item .btn-whatsapp:hover {
+            background: #1ebe5a;
+            transform: scale(1.05);
+        }
+
+        .carrossel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #1a1a2e;
+            color: #fff;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carrossel-btn:hover {
+            background: #25d366;
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carrossel-btn.prev { left: 5px; }
+        .carrossel-btn.next { right: 5px; }
+
+        .carrossel-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            transform: translateY(-50%) scale(0.95);
+        }
+
+        .carrossel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .carrossel-dots span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ddd;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .carrossel-dots span.active {
+            background: #d61935;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 1024px) {
+            .carrossel-item { min-width: calc(50% - 13px); }
+            .carrossel-container { padding: 0 40px; }
+        }
+
+        @media (max-width: 640px) {
+            .carrossel-item { min-width: 100%; }
+            .carrossel-btn { width: 32px; height: 32px; font-size: 14px; }
+            .carrossel-btn.prev { left: 0; }
+            .carrossel-btn.next { right: 0; }
+            .carrossel-container { padding: 0 30px; }
+            .carrossel-item h3 { font-size: 0.95rem; min-height: auto; }
+        }
+
+        /* ============================================ */
+        /* BOTÕES SOCIAIS FLUTUANTES */
+        /* ============================================ */
+        .instagram-float {
+            position: fixed;
+            bottom: 180px;
+            left: 25px;
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 15px rgba(214,36,159,0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: pulse-instagram 2s infinite;
+        }
+        .instagram-float:hover { transform: scale(1.1); box-shadow: 0 6px 25px rgba(214,36,159,0.6); }
+        .instagram-float i { color: white; }
+        @keyframes pulse-instagram { 0% { box-shadow: 0 0 0 0 rgba(214,36,159,0.4); } 70% { box-shadow: 0 0 0 20px rgba(214,36,159,0); } 100% { box-shadow: 0 0 0 0 rgba(214,36,159,0); } }
+
+        .linkedin-float {
+            position: fixed;
+            bottom: 100px;
+            left: 25px;
+            width: 60px;
+            height: 60px;
+            background: #0A66C2;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 4px 15px rgba(10,102,194,0.4);
+            z-index: 999;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            animation: pulse-linkedin 2s infinite;
+        }
+        .linkedin-float:hover { transform: scale(1.1); box-shadow: 0 6px 25px rgba(10,102,194,0.6); }
+        .linkedin-float i { color: white; }
+        @keyframes pulse-linkedin { 0% { box-shadow: 0 0 0 0 rgba(10,102,194,0.4); } 70% { box-shadow: 0 0 0 20px rgba(10,102,194,0); } 100% { box-shadow: 0 0 0 0 rgba(10,102,194,0); } }
+
+        @media (max-width: 768px) {
+            .instagram-float { width: 50px; height: 50px; font-size: 26px; bottom: 160px; left: 15px; }
+            .linkedin-float { width: 50px; height: 50px; font-size: 26px; bottom: 90px; left: 15px; }
+        }
+        @media (max-width: 480px) {
+            .instagram-float { width: 45px; height: 45px; font-size: 22px; bottom: 145px; left: 12px; }
+            .linkedin-float { width: 45px; height: 45px; font-size: 22px; bottom: 80px; left: 12px; }
+        }
     </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Ferrobras Metais",
-  "image": "https://ferrobrasmetais.com.br/assets/images/logo/ferrobrasmetais_logo.webp",
-  "@id": "https://ferrobrasmetais.com.br/",
-  "url": "https://ferrobrasmetais.com.br/",
-  "telephone": "+555420240129",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Caxias do Sul",
-    "addressRegion": "RS",
-    "addressCountry": "BR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -29.1678,
-    "longitude": -51.1794
-  },
-  "openingHours": "Mo-Fr 07:30-12:00,13:00-17:30"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Ferrobras Metais",
-  "image": "https://ferrobrasmetais.com.br/assets/images/logo/ferrobrasmetais_logo.webp",
-  "@id": "https://ferrobrasmetais.com.br/",
-  "url": "https://ferrobrasmetais.com.br/",
-  "telephone": "+555420240129",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Caxias do Sul",
-    "addressRegion": "RS",
-    "addressCountry": "BR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -29.1678,
-    "longitude": -51.1794
-  },
-  "openingHours": "Mo-Fr 07:30-12:00,13:00-17:30"
-}
-</script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Ferrobras Metais",
+      "image": "https://ferrobrasmetais.com.br/assets/images/logo/ferrobrasmetais_logo.webp",
+      "@id": "https://ferrobrasmetais.com.br/",
+      "url": "https://ferrobrasmetais.com.br/",
+      "telephone": "+555420240129",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Caxias do Sul",
+        "addressRegion": "RS",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -29.1678,
+        "longitude": -51.1794
+      },
+      "openingHours": "Mo-Fr 07:30-12:00,13:00-17:30"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Ferrobras Metais",
+      "image": "https://ferrobrasmetais.com.br/assets/images/logo/ferrobrasmetais_logo.webp",
+      "@id": "https://ferrobrasmetais.com.br/",
+      "url": "https://ferrobrasmetais.com.br/",
+      "telephone": "+555420240129",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Caxias do Sul",
+        "addressRegion": "RS",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -29.1678,
+        "longitude": -51.1794
+      },
+      "openingHours": "Mo-Fr 07:30-12:00,13:00-17:30"
+    }
+    </script>
 </head>
 <body>
 
@@ -266,7 +469,7 @@ try {
         <div class="navbar">
             <div class="logo-area">
                 <a href="#inicio" style="display:flex;align-items:center;text-decoration:none;">
-                    <img loading="lazy" src="/assets/images/logo/ferrobrasmetais_logo.webp" alt="Ferrobras Metais" class="brand-logo" width="200" height="105" loading="lazy">
+                    <img loading="lazy" src="/assets/images/logo/ferrobrasmetais_logo.webp" alt="Ferrobras Metais" class="brand-logo" width="200" height="105">
                 </a>
             </div>
             <ul class="nav-links">
@@ -303,89 +506,196 @@ try {
         </div>
     </div>
 
-    <!-- PRODUTOS -->
-    <section class="products-section" id="produtos">
-        <div class="section-title">
-            <h2>O que você encontra aqui</h2>
-            <p>Materiais variados conforme disponibilidade em estoque</p>
-        </div>
-        <div class="products-grid">
-            <?php if(!empty($produtos)): ?>
-                <?php foreach($produtos as $produto): ?>
-                    <?php 
-                    // ============================================================
-                    // VERIFICAÇÃO DE IMAGEM - VERSÃO CORRETA
-                    // ============================================================
-                    $img_encontrada = false;
-                    $img_final = '';
-                    $nome_imagem = $produto['imagem'];
-                    
-                    if(!empty($nome_imagem)) {
-                        // Verificar se o arquivo existe diretamente
-                        $caminho_direto = __DIR__ . '/' . $nome_imagem;
-                        if(file_exists($caminho_direto)) {
-                            $img_encontrada = true;
-                            $img_final = '/' . $nome_imagem;
-                        } else {
-                            // Tentar com barra no início
-                            $caminho_com_barra = __DIR__ . '/' . ltrim($nome_imagem, '/');
-                            if(file_exists($caminho_com_barra)) {
-                                $img_encontrada = true;
-                                $img_final = '/' . ltrim($nome_imagem, '/');
-                            }
-                        }
-                        
-                        // Se não encontrou, procurar nas pastas
-                        if(!$img_encontrada) {
-                            $pastas = [
-                                'assets/images/produtos/',
-                                'assets/images/',
-                                'imagens/produtos/',
-                                'img/produtos/',
-                                'img/'
-                            ];
-                            $nome_arquivo = basename($nome_imagem);
-                            
-                            foreach($pastas as $pasta) {
-                                $caminho = $pasta . $nome_arquivo;
-                                if(file_exists(__DIR__ . '/' . $caminho)) {
+    <!-- ============================================ -->
+    <!-- 🎠 CARROSSEL DE PRODUTOS -->
+    <!-- ============================================ -->
+    <section class="carrossel-produtos" id="produtos">
+        <div class="carrossel-container">
+            <div style="text-align:center;margin-bottom:35px;">
+                <h2 style="font-size:2rem;font-weight:800;color:#1a1a2e;margin-bottom:5px;">
+                    📦 O que você encontra aqui
+                </h2>
+                <p style="font-size:1.05rem;color:#666;">
+                    Materiais variados conforme disponibilidade em estoque
+                </p>
+            </div>
+
+            <div style="position:relative;">
+                <div class="carrossel-wrapper" id="carrosselWrapper">
+                    <?php if(!empty($produtos)): ?>
+                        <?php foreach($produtos as $produto): ?>
+                            <?php
+                            $img_encontrada = false;
+                            $img_final = '';
+                            $nome_imagem = $produto['imagem'];
+
+                            if(!empty($nome_imagem)) {
+                                $caminho_direto = __DIR__ . '/' . $nome_imagem;
+                                if(file_exists($caminho_direto)) {
                                     $img_encontrada = true;
-                                    $img_final = '/' . $caminho;
-                                    break;
+                                    $img_final = '/' . $nome_imagem;
+                                } else {
+                                    $caminho_com_barra = __DIR__ . '/' . ltrim($nome_imagem, '/');
+                                    if(file_exists($caminho_com_barra)) {
+                                        $img_encontrada = true;
+                                        $img_final = '/' . ltrim($nome_imagem, '/');
+                                    }
+                                }
+
+                                if(!$img_encontrada) {
+                                    $pastas = [
+                                        'assets/images/produtos/',
+                                        'assets/images/',
+                                        'imagens/produtos/',
+                                        'img/produtos/',
+                                        'img/'
+                                    ];
+                                    $nome_arquivo = basename($nome_imagem);
+                                    foreach($pastas as $pasta) {
+                                        $caminho = $pasta . $nome_arquivo;
+                                        if(file_exists(__DIR__ . '/' . $caminho)) {
+                                            $img_encontrada = true;
+                                            $img_final = '/' . $caminho;
+                                            break;
+                                        }
+                                    }
                                 }
                             }
-                        }
-                    }
-                    ?>
-                    <div class="product-card">
-                        <?php if($img_encontrada): ?>
-                            <img loading="lazy" src="<?php echo $img_final; ?>" alt="<?php echo htmlspecialchars($produto['nome']); ?>" class="product-image" loading="lazy" width="400" height="200">
-                        <?php else: ?>
-                            <div class="product-image-placeholder">
-                                <i class="fa-solid fa-image"></i>
-                                <span>Sem imagem</span>
+                            ?>
+                            <div class="carrossel-item">
+                                <?php if($img_encontrada): ?>
+                                    <img loading="lazy" src="<?php echo $img_final; ?>" 
+                                         alt="<?php echo htmlspecialchars($produto['nome']); ?>" 
+                                         class="product-image">
+                                <?php else: ?>
+                                    <div class="product-image-placeholder">
+                                        <i class="fa-solid fa-image" style="font-size:2rem;"></i>
+                                        <span style="font-size:0.8rem;">Sem imagem</span>
+                                    </div>
+                                <?php endif; ?>
+                                <h3><?php echo htmlspecialchars($produto['nome']); ?></h3>
+                                <p><?php echo htmlspecialchars($produto['descricao']); ?></p>
+                                <a href="https://wa.me/5554992097850?text=Olá,%20gostaria%20de%20consultar%20sobre%20<?php echo urlencode($produto['nome']); ?>" 
+                                   target="_blank" rel="noopener" class="btn-whatsapp">
+                                    <i class="fab fa-whatsapp"></i> Solicitar Cotação
+                                </a>
                             </div>
-                        <?php endif; ?>
-                        <div class="product-content">
-                            <h3><?php echo htmlspecialchars($produto['nome']); ?></h3>
-                            <p><?php echo htmlspecialchars($produto['descricao']); ?></p>
-                            <a href="https://wa.me/5554992097850?text=Olá,%20gostaria%20de%20consultar%20sobre%20<?php echo urlencode($produto['nome']); ?>" target="_blank" rel="noopener" class="product-link">
-                                Solicitar Cotação <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                        <?php endforeach; ?>
+                    <?php else: ?>
+                        <div style="text-align:center;padding:40px 20px;color:#999;width:100%;">
+                            <i class="fa-solid fa-box-open" style="font-size:3rem;display:block;margin-bottom:15px;"></i>
+                            <p style="font-size:1.1rem;">Nenhum produto cadastrado no momento.</p>
+                            <?php if(isset($erro_conexao)): ?>
+                                <p style="color:#d61935;font-size:0.9rem;margin-top:10px;">⚠️ Erro de conexão: <?php echo htmlspecialchars($erro_conexao); ?></p>
+                            <?php endif; ?>
                         </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <div style="grid-column:1/-1;text-align:center;padding:40px 20px;color:#999;">
-                    <i class="fa-solid fa-box-open" style="font-size:3rem;display:block;margin-bottom:15px;"></i>
-                    <p style="font-size:1.1rem;">Nenhum produto cadastrado no momento.</p>
-                    <?php if(isset($erro_conexao)): ?>
-                        <p style="color:#d61935;font-size:0.9rem;margin-top:10px;">⚠️ Erro de conexão: <?php echo htmlspecialchars($erro_conexao); ?></p>
                     <?php endif; ?>
                 </div>
+
+                <?php if(!empty($produtos) && count($produtos) > 3): ?>
+                    <button class="carrossel-btn prev" onclick="moverCarrossel(-1)" id="prevBtn">❮</button>
+                    <button class="carrossel-btn next" onclick="moverCarrossel(1)" id="nextBtn">❯</button>
+                <?php endif; ?>
+            </div>
+
+            <?php if(!empty($produtos) && count($produtos) > 3): ?>
+                <div class="carrossel-dots" id="carrosselDots"></div>
             <?php endif; ?>
         </div>
     </section>
+
+    <?php if(!empty($produtos) && count($produtos) > 3): ?>
+    <script>
+        (function() {
+            let slideIndex = 0;
+            const wrapper = document.getElementById('carrosselWrapper');
+            const items = wrapper ? wrapper.querySelectorAll('.carrossel-item') : [];
+            const total = items.length;
+            const dotsContainer = document.getElementById('carrosselDots');
+
+            if (!wrapper || total === 0) return;
+
+            if (dotsContainer) {
+                for (let i = 0; i < total; i++) {
+                    const dot = document.createElement('span');
+                    dot.onclick = function() { irPara(i); };
+                    dotsContainer.appendChild(dot);
+                }
+            }
+
+            function getItemsPerView() {
+                if (window.innerWidth <= 640) return 1;
+                if (window.innerWidth <= 1024) return 2;
+                return 3;
+            }
+
+            function atualizarCarrossel() {
+                const porVez = getItemsPerView();
+                const maxIndex = Math.max(0, total - porVez);
+                if (slideIndex > maxIndex) slideIndex = maxIndex;
+                const deslocamento = -slideIndex * (100 / porVez);
+                wrapper.style.transform = 'translateX(' + deslocamento + '%)';
+
+                if (dotsContainer) {
+                    const dots = dotsContainer.querySelectorAll('span');
+                    for (let i = 0; i < dots.length; i++) {
+                        const start = slideIndex;
+                        const end = Math.min(start + porVez, total);
+                        if (i >= start && i < end) {
+                            dots[i].classList.add('active');
+                        } else {
+                            dots[i].classList.remove('active');
+                        }
+                    }
+                }
+
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                if (prevBtn) prevBtn.disabled = (slideIndex === 0);
+                if (nextBtn) nextBtn.disabled = (slideIndex >= maxIndex);
+            }
+
+            function moverCarrossel(dir) {
+                const porVez = getItemsPerView();
+                const maxIndex = Math.max(0, total - porVez);
+                slideIndex = Math.min(Math.max(0, slideIndex + dir), maxIndex);
+                atualizarCarrossel();
+                resetAutoplay();
+            }
+
+            function irPara(index) {
+                const porVez = getItemsPerView();
+                const maxIndex = Math.max(0, total - porVez);
+                slideIndex = Math.min(Math.max(0, index), maxIndex);
+                atualizarCarrossel();
+                resetAutoplay();
+            }
+
+            let autoplay;
+            function resetAutoplay() {
+                clearInterval(autoplay);
+                autoplay = setInterval(function() { moverCarrossel(1); }, 5000);
+            }
+
+            window.addEventListener('resize', function() {
+                clearTimeout(window._resizeTimer);
+                window._resizeTimer = setTimeout(atualizarCarrossel, 200);
+            });
+
+            setTimeout(atualizarCarrossel, 150);
+            resetAutoplay();
+
+            var section = document.querySelector('.carrossel-produtos');
+            if (section) {
+                section.addEventListener('mouseenter', function() { clearInterval(autoplay); });
+                section.addEventListener('mouseleave', function() { resetAutoplay(); });
+            }
+
+            window.moverCarrossel = moverCarrossel;
+            window.irPara = irPara;
+        })();
+    </script>
+    <?php endif; ?>
 
     <!-- SOBRE -->
     <section class="about-section" id="sobre">
@@ -416,20 +726,19 @@ try {
         </div>
     </section>
 
-    <!-- FOOTER -->
-<!-- ============================================================
-     ONDE ESTAMOS 
-     ============================================================ --> 
-<section class="onde-estamos" style="padding:40px 15px;background:#f4f6f8;text-align:center;"> 
-    <div class="container" style="max-width:800px;margin:0 auto;"> 
-        <h2 style="font-family:"Oswald",sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);text-transform:uppercase;color:#121212;margin-bottom:15px;">📍 Onde estamos</h2> 
-        <p style="color:#666;font-size:clamp(0.9rem,1.2vw,1.05rem);margin-bottom:12px;">Estamos localizados em <strong>Caxias do Sul</strong>, atendendo também a região de <strong>Farroupilha</strong> e imediações com agilidade e atendimento personalizado.</p> 
-        <p style="color:#666;font-size:clamp(0.9rem,1.2vw,1.05rem);">Atendimento <strong>presencial</strong> em nossa loja na R. José Michelon, 273 - Nossa Sra. de Fátima, Caxias do Sul - RS, 95041-310.</p> 
-        <div style="margin-top:15px;"> 
-            <a href="https://maps.app.goo.gl/Q2p1dDGUzgeUJAB19" target="_blank" style="display:inline-block;background:#d61935;color:#fff;padding:10px 25px;border-radius:5px;text-decoration:none;font-weight:600;">Ver no Google Maps</a> 
+    <!-- ONDE ESTAMOS -->
+    <section class="onde-estamos" style="padding:40px 15px;background:#f4f6f8;text-align:center;"> 
+        <div class="container" style="max-width:800px;margin:0 auto;"> 
+            <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(1.6rem,3vw,2.2rem);text-transform:uppercase;color:#121212;margin-bottom:15px;">📍 Onde estamos</h2> 
+            <p style="color:#666;font-size:clamp(0.9rem,1.2vw,1.05rem);margin-bottom:12px;">Estamos localizados em <strong>Caxias do Sul</strong>, atendendo também a região de <strong>Farroupilha</strong> e imediações com agilidade e atendimento personalizado.</p> 
+            <p style="color:#666;font-size:clamp(0.9rem,1.2vw,1.05rem);">Atendimento <strong>presencial</strong> em nossa loja na R. José Michelon, 273 - Nossa Sra. de Fátima, Caxias do Sul - RS, 95041-310.</p> 
+            <div style="margin-top:15px;"> 
+                <a href="https://maps.app.goo.gl/Q2p1dDGUzgeUJAB19" target="_blank" style="display:inline-block;background:#d61935;color:#fff;padding:10px 25px;border-radius:5px;text-decoration:none;font-weight:600;">Ver no Google Maps</a> 
+            </div> 
         </div> 
-    </div> 
-</section>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
         <div class="footer-container">
             <div class="footer-col">
@@ -517,6 +826,16 @@ try {
     <!-- BARRA DE PROGRESSO -->
     <div id="progressBar"></div>
 
+    <!-- INSTAGRAM FLUTUANTE -->
+    <a href="https://www.instagram.com/ferrobrasmetais" target="_blank" rel="noopener" class="instagram-float" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+    </a>
+
+    <!-- LINKEDIN FLUTUANTE -->
+    <a href="https://www.linkedin.com/company/ferrobrasmetais" target="_blank" rel="noopener" class="linkedin-float" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+
     <!-- JAVASCRIPT -->
     <script>
         function openModal(modalId) {
@@ -588,631 +907,89 @@ try {
             window.addEventListener('load', update);
         })();
     </script>
-    <!-- 
-============================================================
-         GOOGLE ANALYTICS (GA4)
-         
-============================================================ 
--->
+
     <!-- Google tag (gtag.js) -->
-    <script async 
-src="https://www.googletagmanager.com/gtag/js?id=G-LJRKBE47Y2"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LJRKBE47Y2"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-LJRKBE47Y2');
     </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Ferrobras Metais",
-  "image": "https://ferrobrasmetais.com.br/assets/images/logo/ferrobrasmetais_logo.webp",
-  "@id": "https://ferrobrasmetais.com.br/",
-  "url": "https://ferrobrasmetais.com.br/",
-  "telephone": "+555420240129",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Caxias do Sul",
-    "addressRegion": "RS",
-    "addressCountry": "BR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -29.1678,
-    "longitude": -51.1794
-  },
-  "openingHours": "Mo-Fr 07:30-12:00,13:00-17:30"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Ferrobras Metais",
-  "image": "https://ferrobrasmetais.com.br/assets/images/logo/ferrobrasmetais_logo.webp",
-  "@id": "https://ferrobrasmetais.com.br/",
-  "url": "https://ferrobrasmetais.com.br/",
-  "telephone": "+555420240129",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Caxias do Sul",
-    "addressRegion": "RS",
-    "addressCountry": "BR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -29.1678,
-    "longitude": -51.1794
-  },
-  "openingHours": "Mo-Fr 07:30-12:00,13:00-17:30"
-}
-</script>
-</head>
-    <!-- ============================================================
-         PWA - SERVICE WORKER 
-         ============================================================ --> 
-    <script> 
-        // Registrar Service Worker 
-                .then(function(reg) { 
-                    console.log("✅ Service Worker registrado!"); 
-                }) 
-                .catch(function(err) { 
-                    console.log("❌ Erro ao registrar Service Worker:", err); 
-                }); 
-        } 
+
+    <!-- SERVICE WORKER -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("/sw.js")
+                .then(function(reg) {
+                    console.log("✅ Service Worker registrado!");
+                })
+                .catch(function(err) {
+                    console.log("❌ Erro:", err);
+                });
+        }
     </script>
-    <script> 
-                .then(function(reg) { 
-                    console.log("✅ Service Worker registrado!"); 
-                }) 
-                .catch(function(err) { 
-                    console.log("❌ Erro:", err); 
-                }); 
-        } 
-    </script>
-<script>
-    if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("/sw.js")
-            .then(function(reg) {
-                console.log("✅ Service Worker registrado!");
-            })
-            .catch(function(err) {
-                console.log("❌ Erro:", err);
+
+    <!-- INSTALAÇÃO DO APP -->
+    <script>
+        let deferredPrompt;
+        let isAppInstalled = false;
+
+        window.addEventListener('appinstalled', function() {
+            isAppInstalled = true;
+            console.log('✅ App instalado com sucesso!');
+        });
+
+        window.addEventListener('beforeinstallprompt', function(e) {
+            e.preventDefault();
+            deferredPrompt = e;
+            console.log('📱 App disponível para instalação');
+            
+            if (!document.getElementById('btnInstalarApp')) {
+                const btn = document.createElement('button');
+                btn.id = 'btnInstalarApp';
+                btn.innerHTML = '📲 Instalar App';
+                btn.style.cssText = `
+                    position: fixed; bottom: 180px; right: 25px;
+                    background: #25d366; color: #fff; border: none;
+                    padding: 12px 20px; border-radius: 50px;
+                    font-size: 14px; font-weight: 600; cursor: pointer;
+                    box-shadow: 0 4px 15px rgba(37,211,102,0.4);
+                    z-index: 9999; animation: pulse-green 2s infinite;
+                    display: flex; align-items: center; gap: 8px;
+                `;
+                btn.onclick = function() {
+                    if (deferredPrompt) {
+                        deferredPrompt.prompt();
+                        deferredPrompt.userChoice.then(function(choiceResult) {
+                            if (choiceResult.outcome === 'accepted') {
+                                console.log('✅ App instalado!');
+                                isAppInstalled = true;
+                                document.getElementById('btnInstalarApp').remove();
+                            }
+                            deferredPrompt = null;
+                        });
+                    }
+                };
+                document.body.appendChild(btn);
+            }
+        });
+
+        if (window.matchMedia('(display-mode: standalone)').matches) {
+            isAppInstalled = true;
+            document.addEventListener('DOMContentLoaded', function() {
+                const btn = document.getElementById('btnInstalarApp');
+                if (btn) btn.remove();
             });
-    }
-</script>
-<!-- ============================================================
-     BOTÕES SOCIAIS FLUTUANTES 
-     ============================================================ --> 
+        }
+    </script>
+    <style>
+        @keyframes pulse-green {
+            0% { transform: scale(1); box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(37,211,102,0.6); }
+            100% { transform: scale(1); box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
+        }
+    </style>
 
-<!-- INSTAGRAM --> 
-<a href="https://www.instagram.com/ferrobrasmetais" 
-   target="_blank" 
-   rel="noopener" 
-   class="instagram-float" 
-   aria-label="Instagram"> 
-    <i class="fa-brands fa-instagram"></i> 
-</a> 
-
-<!-- LINKEDIN --> 
-<a href="https://www.linkedin.com/company/ferrobrasmetais" 
-   target="_blank" 
-   rel="noopener" 
-   class="linkedin-float" 
-   aria-label="LinkedIn"> 
-    <i class="fa-brands fa-linkedin-in"></i> 
-</a> 
-
-<style> 
-    /* Instagram */ 
-    .instagram-float { 
-        position: fixed; 
-        bottom: 180px; 
-        left: 25px; 
-        width: 60px; 
-        height: 60px; 
-        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); 
-        color: white; 
-        border-radius: 50%; 
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        font-size: 32px; 
-        box-shadow: 0 4px 15px rgba(214,36,159,0.4); 
-        z-index: 999; 
-        text-decoration: none; 
-        transition: all 0.3s ease; 
-        animation: pulse-instagram 2s infinite; 
-    } 
-    .instagram-float:hover { 
-        transform: scale(1.1); 
-        box-shadow: 0 6px 25px rgba(214,36,159,0.6); 
-    } 
-    .instagram-float i { 
-        color: white; 
-    } 
-    @keyframes pulse-instagram { 
-        0% { box-shadow: 0 0 0 0 rgba(214,36,159,0.4); } 
-        70% { box-shadow: 0 0 0 20px rgba(214,36,159,0); } 
-        100% { box-shadow: 0 0 0 0 rgba(214,36,159,0); } 
-    } 
-
-    /* LinkedIn */ 
-    .linkedin-float { 
-        position: fixed; 
-        bottom: 100px; 
-        left: 25px; 
-        width: 60px; 
-        height: 60px; 
-        background: #0A66C2; 
-        color: white; 
-        border-radius: 50%; 
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        font-size: 32px; 
-        box-shadow: 0 4px 15px rgba(10,102,194,0.4); 
-        z-index: 999; 
-        text-decoration: none; 
-        transition: all 0.3s ease; 
-        animation: pulse-linkedin 2s infinite; 
-    } 
-    .linkedin-float:hover { 
-        transform: scale(1.1); 
-        box-shadow: 0 6px 25px rgba(10,102,194,0.6); 
-    } 
-    .linkedin-float i { 
-        color: white; 
-    } 
-    @keyframes pulse-linkedin { 
-        0% { box-shadow: 0 0 0 0 rgba(10,102,194,0.4); } 
-        70% { box-shadow: 0 0 0 20px rgba(10,102,194,0); } 
-        100% { box-shadow: 0 0 0 0 rgba(10,102,194,0); } 
-    } 
-
-    /* Responsivo */ 
-    @media (max-width: 768px) { 
-        .instagram-float { 
-            width: 50px; 
-            height: 50px; 
-            font-size: 26px; 
-            bottom: 160px; 
-            left: 15px; 
-        } 
-        .linkedin-float { 
-            width: 50px; 
-            height: 50px; 
-            font-size: 26px; 
-            bottom: 90px; 
-            left: 15px; 
-        } 
-    } 
-    @media (max-width: 480px) { 
-        .instagram-float { 
-            width: 45px; 
-            height: 45px; 
-            font-size: 22px; 
-            bottom: 145px; 
-            left: 12px; 
-        } 
-        .linkedin-float { 
-            width: 45px; 
-            height: 45px; 
-            font-size: 22px; 
-            bottom: 80px; 
-            left: 12px; 
-        } 
-    } 
-</style>
 </body>
 </html>
-<!-- ============================================================
-     ============================================================ -->
-</button>
-<!-- ============================================================
-     ============================================================ -->
-</button>
-
-<!-- ============================================================
-     INSTALAÇÃO AUTOMÁTICA DO APP
-     ============================================================ -->
-<script>
-    // ============================================================
-    // INSTALAR APP AUTOMATICAMENTE
-    // ============================================================
-    
-    let isAppInstalled = false;
-
-    // Verificar se já está instalado
-    window.addEventListener('appinstalled', function() {
-        isAppInstalled = true;
-        console.log('✅ App instalado com sucesso!');
-        // Mostrar mensagem de sucesso
-        mostrarToast('✅ App instalado com sucesso!');
-    });
-
-    // Capturar o evento de instalação
-        e.preventDefault();
-        console.log('📱 App disponível para instalação');
-        
-        // Mostrar botão de instalação
-        mostrarBotaoInstalacao();
-    });
-
-    // Função para mostrar o botão de instalação
-    function mostrarBotaoInstalacao() {
-        // Verificar se o botão já existe
-            return;
-        }
-        
-        // Criar botão de instalação
-        const btn = document.createElement('button');
-        btn.style.cssText = `
-
-            position: fixed;
-
-            bottom: 180px;
-
-            right: 25px;
-
-            background: #25d366;
-
-            color: #fff;
-
-            border: none;
-
-            padding: 12px 20px;
-
-            border-radius: 50px;
-
-            font-size: 14px;
-
-            font-weight: 600;
-
-            cursor: pointer;
-
-            box-shadow: 0 4px 15px rgba(37,211,102,0.4);
-
-            z-index: 9999;
-
-            animation: pulse-green 2s infinite;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 8px;
-
-        `;
-        btn.onclick = function() {
-            instalarApp();
-        };
-        
-        // Adicionar estilo de pulsação
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes pulse {
-                0% { transform: scale(1); }
-                50% { transform: scale(1.05); }
-                100% { transform: scale(1); }
-            }
-        `;
-        document.head.appendChild(style);
-        
-        document.body.appendChild(btn);
-        
-        // Mostrar toast informativo
-        setTimeout(function() {
-        }, 2000);
-    }
-
-    // Função para instalar o app
-    function instalarApp() {
-                if (choiceResult.outcome === 'accepted') {
-                    console.log('✅ Usuário aceitou instalar');
-                    isAppInstalled = true;
-                    mostrarToast('✅ App instalado com sucesso!');
-                    // Remover o botão após instalar
-                    if (btn) btn.remove();
-                } else {
-                    console.log('❌ Usuário recusou instalar');
-                    mostrarToast('❌ Instalação cancelada');
-                }
-            });
-        } else {
-            mostrarToast('⚠️ App não disponível para instalação');
-        }
-    }
-
-    // Verificar se já está instalado (pelo PWA)
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-        isAppInstalled = true;
-        console.log('✅ App já está instalado');
-        // Remover o botão se já estiver instalado
-        document.addEventListener('DOMContentLoaded', function() {
-            if (btn) btn.remove();
-        });
-    }
-
-    console.log('📱 Sistema de instalação automática carregado!');
-</script>
-
-<!-- Estilos adicionais -->
-<style>
-    /* Animação do botão */
-    @keyframes pulse {
-        0% { transform: scale(1); box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
-        50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(37,211,102,0.6); }
-        100% { transform: scale(1); box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
-    }
-    
-    /* Toast de notificação */
-    .toast-install {
-        position: fixed;
-        bottom: 250px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: #1a1a2e;
-        color: #fff;
-        padding: 12px 25px;
-        border-radius: 8px;
-        font-size: 14px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        z-index: 10000;
-        border-left: 4px solid #d61935;
-        max-width: 90%;
-        text-align: center;
-    }
-</style>
-
-<!-- ============================================================
-     BOTÃO DE INSTALAÇÃO FIXO (SEMPRE VISÍVEL)
-     ============================================================ -->
-</button>
-
-<style>
-        @keyframes pulse-green {
-
-            0% { transform: scale(1); box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
-
-            50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(37,211,102,0.6); }
-
-            100% { transform: scale(1); box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
-
-        }
-        50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(37,211,102,0.6); }
-        100% { transform: scale(1); box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
-    }
-</style>
-
-<script>
-    // Esconder o botão fixo se já estiver instalado
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-        document.addEventListener('DOMContentLoaded', function() {
-            if (btn) btn.style.display = 'none';
-        });
-    }
-</script>
-
-<script>
-    // ============================================================
-    // FUNÇÃO ALTERNATIVA DE INSTALAÇÃO
-    // ============================================================
-    
-    function instalarAppAlternativo() {
-        console.log('📱 Tentando instalar app...');
-        
-        // Verificar se já está instalado
-        if (window.matchMedia('(display-mode: standalone)').matches) {
-            mostrarToast('✅ App já está instalado!');
-            return;
-        }
-        
-                if (choiceResult.outcome === 'accepted') {
-                    mostrarToast('✅ App instalado com sucesso!');
-                } else {
-                    mostrarToast('❌ Instalação cancelada');
-                }
-            });
-            return;
-        }
-        
-        mostrarToast('📱 Clique nos 3 pontos ⋮ e selecione "Adicionar à tela inicial"');
-        
-        // Abrir o menu de instalação do navegador (se disponível)
-        if (navigator.share) {
-            navigator.share({
-                title: 'Ferrobras Metais',
-                text: 'Instale o app Ferrobras Metais!',
-                url: window.location.href
-            });
-        }
-    }
-    
-    // Substituir a função original
-    window.instalarApp = instalarAppAlternativo;
-    
-    console.log('✅ Função de instalação alternativa carregada!');
-</script>
-
-<!-- ============================================================
-     INSTALAÇÃO AUTOMÁTICA DO APP (VERSÃO QUE FUNCIONAVA)
-     ============================================================ -->
-<script>
-    let deferredPrompt;
-    let isAppInstalled = false;
-
-    window.addEventListener('appinstalled', function() {
-        isAppInstalled = true;
-        console.log('✅ App instalado com sucesso!');
-        mostrarToast('✅ App instalado com sucesso!');
-    });
-
-    window.addEventListener('beforeinstallprompt', function(e) {
-        e.preventDefault();
-        deferredPrompt = e;
-        console.log('📱 App disponível para instalação');
-        mostrarBotaoInstalacao();
-    });
-
-    function mostrarBotaoInstalacao() {
-        if (document.getElementById('btnInstalarApp')) {
-            return;
-        }
-        
-        const btn = document.createElement('button');
-        btn.id = 'btnInstalarApp';
-        btn.innerHTML = '📲 Instalar App';
-        btn.style.cssText = `
-
-            position: fixed;
-
-            bottom: 180px;
-
-            right: 25px;
-
-            background: #25d366;
-
-            color: #fff;
-
-            border: none;
-
-            padding: 12px 20px;
-
-            border-radius: 50px;
-
-            font-size: 14px;
-
-            font-weight: 600;
-
-            cursor: pointer;
-
-            box-shadow: 0 4px 15px rgba(37,211,102,0.4);
-
-            z-index: 9999;
-
-            animation: pulse-green 2s infinite;
-
-            display: flex;
-
-            align-items: center;
-
-            gap: 8px;
-
-        `;
-        btn.onclick = function() {
-            instalarApp();
-        };
-        
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes pulse {
-                0% { transform: scale(1); box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
-                50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(37,211,102,0.6); }
-                100% { transform: scale(1); box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
-            }
-        `;
-        document.head.appendChild(style);
-        document.body.appendChild(btn);
-        
-        setTimeout(function() {
-            mostrarToast('📱 Clique em "Instalar App" para instalar!');
-        }, 2000);
-    }
-
-    function instalarApp() {
-        if (deferredPrompt) {
-            deferredPrompt.prompt();
-            deferredPrompt.userChoice.then(function(choiceResult) {
-                if (choiceResult.outcome === 'accepted') {
-                    console.log('✅ Usuário aceitou instalar');
-                    isAppInstalled = true;
-                    mostrarToast('✅ App instalado com sucesso!');
-                    const btn = document.getElementById('btnInstalarApp');
-                    if (btn) btn.remove();
-                } else {
-                    console.log('❌ Usuário recusou instalar');
-                    mostrarToast('❌ Instalação cancelada');
-                }
-                deferredPrompt = null;
-            });
-        } else {
-            mostrarToast('⚠️ App não disponível para instalação');
-        }
-    }
-
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-        isAppInstalled = true;
-        document.addEventListener('DOMContentLoaded', function() {
-            const btn = document.getElementById('btnInstalarApp');
-            if (btn) btn.remove();
-        });
-    }
-
-    // Função toast
-    if (typeof mostrarToast === 'undefined') {
-        window.mostrarToast = function(mensagem) {
-            const toast = document.createElement('div');
-            toast.style.cssText = `
-                position: fixed;
-                bottom: 250px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: #1a1a2e;
-                color: #fff;
-                padding: 12px 25px;
-                border-radius: 8px;
-                font-size: 14px;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-                z-index: 10000;
-                border-left: 4px solid #d61935;
-                max-width: 90%;
-                text-align: center;
-                transition: all 0.3s ease;
-                opacity: 0;
-            `;
-            toast.textContent = mensagem;
-            document.body.appendChild(toast);
-            
-            setTimeout(() => {
-                toast.style.opacity = '1';
-                toast.style.transform = 'translateX(-50%)';
-            }, 100);
-            
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                setTimeout(() => toast.remove(), 500);
-            }, 3000);
-        };
-    }
-
-    console.log('📱 Sistema de instalação carregado!');
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Ferrobras Metais",
-  "image": "https://ferrobrasmetais.com.br/assets/images/logo/ferrobrasmetais_logo.webp",
-  "@id": "https://ferrobrasmetais.com.br/",
-  "url": "https://ferrobrasmetais.com.br/",
-  "telephone": "+555420240129",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Caxias do Sul",
-    "addressRegion": "RS",
-    "addressCountry": "BR"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -29.1678,
-    "longitude": -51.1794
-  },
-  "openingHours": "Mo-Fr 07:30-12:00,13:00-17:30"
-}
-</script>
