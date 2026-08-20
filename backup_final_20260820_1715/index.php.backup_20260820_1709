@@ -618,41 +618,23 @@ src="https://www.googletagmanager.com/gtag/js?id=G-LJRKBE47Y2"></script>
         // Criar botão de instalação
         const btn = document.createElement('button');
         btn.style.cssText = `
-
             position: fixed;
-
             bottom: 180px;
-
             right: 25px;
-
             background: #25d366;
-
             color: #fff;
-
             border: none;
-
             padding: 12px 20px;
-
             border-radius: 50px;
-
             font-size: 14px;
-
             font-weight: 600;
-
             cursor: pointer;
-
             box-shadow: 0 4px 15px rgba(37,211,102,0.4);
-
             z-index: 9999;
-
-            animation: pulse-green 2s infinite;
-
+            animation: pulse 2s infinite;
             display: flex;
-
             align-items: center;
-
             gap: 8px;
-
         `;
         btn.onclick = function() {
             instalarApp();
@@ -741,15 +723,8 @@ src="https://www.googletagmanager.com/gtag/js?id=G-LJRKBE47Y2"></script>
 </button>
 
 <style>
-        @keyframes pulse-green {
-
-            0% { transform: scale(1); box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
-
-            50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(37,211,102,0.6); }
-
-            100% { transform: scale(1); box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
-
-        }
+    @keyframes pulse-green {
+        0% { transform: scale(1); box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
         50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(37,211,102,0.6); }
         100% { transform: scale(1); box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
     }
@@ -834,41 +809,23 @@ src="https://www.googletagmanager.com/gtag/js?id=G-LJRKBE47Y2"></script>
         btn.id = 'btnInstalarApp';
         btn.innerHTML = '📲 Instalar App';
         btn.style.cssText = `
-
             position: fixed;
-
             bottom: 180px;
-
             right: 25px;
-
             background: #25d366;
-
             color: #fff;
-
             border: none;
-
             padding: 12px 20px;
-
             border-radius: 50px;
-
             font-size: 14px;
-
             font-weight: 600;
-
             cursor: pointer;
-
             box-shadow: 0 4px 15px rgba(37,211,102,0.4);
-
             z-index: 9999;
-
-            animation: pulse-green 2s infinite;
-
+            animation: pulse 2s infinite;
             display: flex;
-
             align-items: center;
-
             gap: 8px;
-
         `;
         btn.onclick = function() {
             instalarApp();

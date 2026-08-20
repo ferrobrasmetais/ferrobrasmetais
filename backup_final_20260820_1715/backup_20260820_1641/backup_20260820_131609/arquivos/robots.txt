@@ -1,0 +1,57 @@
+# ============================================
+# ROBOTS.TXT - FERROBRAS METAIS
+# ============================================
+
+# PERMITIR TODOS OS ROBÔS
+User-agent: *
+
+# PERMITIR TODO O SITE (exceto o que for bloqueado)
+Allow: /
+
+# ============================================
+# BLOQUEAR PASTAS ADMINISTRATIVAS E SENSÍVEIS
+# ============================================
+Disallow: /painel_industrial/
+Disallow: /admin/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /imagens/
+Disallow: /img/
+Disallow: /temp/
+Disallow: /tmp/
+Disallow: /logs/
+Disallow: /backup/
+
+# ============================================
+# BLOQUEAR ARQUIVOS SENSÍVEIS
+# ============================================
+Disallow: /database.php
+Disallow: /config.php
+Disallow: /install*.php
+Disallow: /*.sql
+Disallow: /*.log
+Disallow: /*.bak
+Disallow: /*.backup
+
+# ============================================
+# BLOQUEAR BOTS MALICIOSOS (opcional)
+# ============================================
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: rogerbot
+Disallow: /
+
+# ============================================
+# SITEMAP
+# ============================================
+Sitemap: https://ferrobrasmetais.com.br/sitemap.xml
