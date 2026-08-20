@@ -136,15 +136,3 @@ RedirectMatch 404 /(config|includes|painel_industrial|backup_|lixeira_)/.*\.(php
     BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
     Header append Vary User-Agent
 </IfModule>
-
-# Permitir Service Worker
-<Files "sw.js">
-    Order Allow,Deny
-    Allow from all
-</Files>
-
-# Garantir que sw.js seja servido corretamente
-<FilesMatch "sw\.js$">
-    Header set Content-Type "application/javascript"
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
-</FilesMatch>

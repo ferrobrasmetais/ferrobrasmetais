@@ -1,0 +1,55 @@
+# ============================================================
+# 🔐 SEGURANÇA DO SITE
+# ============================================================
+
+# Prevenir listagem de diretórios
+Options -Indexes
+
+# Proteger arquivos sensíveis
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sql|bak|backup|sql.gz)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Proteger pastas sensíveis
+RedirectMatch 404 /(config|includes|painel_industrial|backup_|lixeira_)/.*\.(php|ini|sql|log)$
+
+# Proteger contra SQL Injection e XSS
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{QUERY_STRING} [^a-zA-Z0-9_]
+    RewriteRule ^ - [F,L]
+</IfModule>
+
+# Bloquear bots maliciosos
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_USER_AGENT} (ahrefs|majestic|rogerbot|semrush|spider|crawler|bot) [NC]
+    RewriteRule .* - [R=403,L]
+</IfModule>
+
+# Proteger XML-RPC (WordPress)
+<Files xmlrpc.php>
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Prevenir hotlinking de imagens
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTP_REFERER} !^$
+    RewriteCond %{HTTP_REFERER} !^https?://(www\.)?ferrobrasmetais\.com\.br [NC]
+    RewriteRule \.(jpg|jpeg|png|gif|webp|ico)$ - [F,NC,L]
+</IfModule>
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+</IfModule>
+
+# Cache de arquivos estáticos
+<FilesMatch "\.(css|js|png|jpg|jpeg|gif|webp|ico|woff|woff2|ttf|svg)$">
+    Header set Cache-Control "public, max-age=2592000, immutable"
+</FilesMatch>
