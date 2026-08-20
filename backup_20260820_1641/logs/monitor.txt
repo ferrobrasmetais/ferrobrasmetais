@@ -1,5 +1,0 @@
-[2026-08-20 14:53:29] ✅ ONLINE | Código: 200 | Tempo: 37ms
-[2026-08-20 14:54:26] ❌ OFFLINE | Código: 404 | Tempo: 15.06ms
-[2026-08-20 15:14:12] ✅ ONLINE | Código: 200 | Tempo: 110.42ms
-[2026-08-20 15:15:30] ✅ ONLINE | Código: 200 | Tempo: 37.95ms
-[2026-08-20 15:20:31] ✅ ONLINE | Código: 200 | Tempo: 37.88ms

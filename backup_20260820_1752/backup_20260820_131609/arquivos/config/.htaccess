@@ -1,7 +1,0 @@
-# ============================================
-# .HTACCESS - PASTA CONFIG
-# ============================================
-
-# Bloquear TODO o acesso à pasta config
-Order Allow,Deny
-Deny from all
